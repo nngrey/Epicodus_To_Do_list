@@ -1,0 +1,24 @@
+<h1>Tasks</h1>
+
+<ul>
+  <% @tasks.each do |task| %>
+    <li><a href= "/tasks/<%= task.id%>"><%= task.description %></a></li>
+  <% end %>
+</ul>
+
+<h1> New Task </h1>
+
+<% if @task.errors.any? %>
+  <h3>Please fix these errors:</h3>
+  <ul>
+    <% @task.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<form action ="/tasks" method ="post">
+  <label for="task_description">Description</label>
+  <input id="task_description" name="description" type="text" value="<%= @task.description %>">
+  <button>Create Task</button>
+</form>
