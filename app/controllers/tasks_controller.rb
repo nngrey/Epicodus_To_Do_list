@@ -1,8 +1,8 @@
 class TasksController < ApplicationController
+
   def index
     @tasks = Task.all
     @task = Task.new
-
     render('tasks/index.html.erb')
   end
 
@@ -11,9 +11,8 @@ class TasksController < ApplicationController
     render('tasks/show.html.erb')
   end
 
- def create
+  def create
     @task = Task.create(:description => params[:description])
-
     if @task.save
       render('tasks/success.html.erb')
     else
