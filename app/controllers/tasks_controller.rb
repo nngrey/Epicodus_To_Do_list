@@ -3,7 +3,7 @@ class TasksController < ApplicationController
   def index
     @tasks = Task.all
     @task = Task.new
-    render('tasks/index.html.erb')
+    # render('tasks/index.html.erb')
   end
 
   def show
