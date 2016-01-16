@@ -1,3 +1,3 @@
 $('.delete_task').bind('ajax:success', function() {
-$(this).closest('li').fadeOut();
+$(this).closest('tr').fadeOut();
 });
