@@ -17,7 +17,8 @@ class TasksController < ApplicationController
       flash[:success] = "Post successfully created"
       render :index
     else
-      render('tasks/index.html.erb')
+      flash[:errors] = "Post successfully created"
+      redirect_to :edit
     end
   end
 
@@ -30,7 +31,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     if @task.update(:description => params[:description],
                     :done => params[:done])
-      render('tasks/success.html.erb')
+      render :index
     else
       render('tasks/edit.html.erb')
     end
@@ -39,7 +40,12 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-    render('tasks/destroy.html.erb')
+
+    respond_to do |format|
+      format.html { redirect_to tasks_url }
+      format.json { head :no_content }
+      format.js   { render :layout => false }
+    end
   end
 
 end

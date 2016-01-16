@@ -13,7 +13,8 @@
         %input{:name => "_method", :type => "hidden", :value => "patch"}
           %input{:name => "description", :type => "hidden", :value => task.description}
             %input{:name => "done", :type => "hidden", :value => "true"}
-              %button Mark done
+              %button.btn.btn-primary.btn-xs Done
+              = link_to 'Delete', "/tasks/#{task.id}", method: :delete, data: { confirm: 'Are you sure?' }, :remote => true, :class => 'delete_task'
 %form{:action => "/tasks", :method => "post"}
   %input#task_description{:name => "description", :type => "text", :value => @task.description}
     %button Add
