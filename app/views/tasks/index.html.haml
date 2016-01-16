@@ -1,25 +1,24 @@
-.container
-  %h3 Upcoming
-  - if @task.errors.any?
-    %h3 Please fix these errors:
-    %ul
-      - @task.errors.full_messages.each do |message|
-        %li
-          = message
+%h3 Upcoming
+- if @task.errors.any?
+  %h3 Please fix these errors:
   %ul
-    - Task.not_done.each do |task|
+    - @task.errors.full_messages.each do |message|
       %li
-        %a{:href => "/tasks/#{task.id}"}= task.description
-        %form{:action => "/tasks/#{task.id}", :method => "post", :style => "display:inline-block"}
-          %input{:name => "_method", :type => "hidden", :value => "patch"}
-            %input{:name => "description", :type => "hidden", :value => task.description}
-              %input{:name => "done", :type => "hidden", :value => "true"}
-                %button Mark done
-  %form{:action => "/tasks", :method => "post"}
-    %input#task_description{:name => "description", :type => "text", :value => @task.description}
-      %button Add
-  %h3 Completed
-  %ul
-    - Task.done.each do |task|
-      %li
-        = link_to task.description, tasks_path(task)
+        = message
+%ul
+  - Task.not_done.each do |task|
+    %li
+      %a{:href => "/tasks/#{task.id}"}= task.description
+      %form{:action => "/tasks/#{task.id}", :method => "post", :style => "display:inline-block"}
+        %input{:name => "_method", :type => "hidden", :value => "patch"}
+          %input{:name => "description", :type => "hidden", :value => task.description}
+            %input{:name => "done", :type => "hidden", :value => "true"}
+              %button Mark done
+%form{:action => "/tasks", :method => "post"}
+  %input#task_description{:name => "description", :type => "text", :value => @task.description}
+    %button Add
+%h3 Completed
+%ul
+  - Task.done.each do |task|
+    %li
+      = link_to task.description, tasks_path(task)

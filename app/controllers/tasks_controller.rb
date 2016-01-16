@@ -14,7 +14,8 @@ class TasksController < ApplicationController
   def create
     @task = Task.create(:description => params[:description])
     if @task.save
-      render('tasks/success.html.erb')
+      flash[:success] = "Post successfully created"
+      render :index
     else
       render('tasks/index.html.erb')
     end

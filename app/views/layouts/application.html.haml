@@ -6,8 +6,10 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
-    .navbar.navbar-default
+    %nav.navbar.navbar-default
       .container-fluid
         .navbar-header
           %a.navbar-brand{:href => "#"} To Do List
-    = yield
+    .container
+      = render partial: "/shared/flash_messages"
+      = yield
