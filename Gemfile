@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bootstrap-sass'
 gem 'haml'
+gem 'haml-rails'
 
 group :development do
   gem 'better_errors'
