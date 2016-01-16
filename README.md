@@ -16,9 +16,8 @@ This will display a button on the page that submits submits a PATCH request to u
 
 On your view, display done tasks and not done tasks under separate headers. Remember, your views should contain no application logic, and should never access your classes directly - in other words, don't put something like Task.where(:done => false) into your views. Instead, create methods in your model for List#done_tasks and List#not_done_tasks, and then call those methods in the view.
 
-Multiple model apps
+#Multiple model apps
 
-To Do list
-Allow users to create tasks, list them out, edit them, and delete them. Have a dedicated new page.
-Now, combine the new page onto the index page.
-Add the ability to have multiple lists.
+* Allow users to create tasks, list them out, edit them, and delete them. Have a dedicated new page.
+* Now, combine the new page onto the index page.
+* Add the ability to have multiple lists.
