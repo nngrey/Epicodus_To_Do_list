@@ -1,9 +1,7 @@
 
 #Single model apps
 
-##Epicodus Instructions
-
-###I pulled this repo and updated it on Jan  16, 2016
+###Epicodus Instructions (I pulled this repo and updated it on Jan  16, 2016)
 
 Make a To Do list app, with just a single model task model. Don't worry about having a checkbox for done - save marking tasks as done or not until the next step.
 On the index page, let users mark tasks as done without deleting them. Here's an example of the how to do this:
