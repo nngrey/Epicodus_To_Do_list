@@ -1,9 +1,13 @@
 !!!
 %html
   %head
-    %title ToDo
-    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    %title To Do List
+    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
+    .navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          %a.navbar-brand{:href => "#"} To Do List
     = yield
