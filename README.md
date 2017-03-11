@@ -1,5 +1,5 @@
 #Epicodus Exercise 
-(I pulled this repo and updated it on Jan  16, 2016)
+(I pulled this repo and updated it on Jan  16, 2016.)
 
 ###Single model app
 
